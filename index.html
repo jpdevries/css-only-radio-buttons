@@ -87,7 +87,6 @@
 
       form.addEventListener('submit',function(e){
       e.preventDefault();
-      console.log(e);
       try {
         document.querySelector('pre').innerHTML = new FormData(e.target).getAll("q1");
       } catch(e) {
