@@ -1,2 +1,2 @@
-# css-only-radio-buttons
-CSS Only Radio Buttons Example
+# CSS Only Radio Buttons
+Accessible styling a radio set group with CSS.

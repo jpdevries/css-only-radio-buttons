@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS only Custom Radio Buttons</title>
+    <style media="screen">
+    /* https://codepen.io/jpdevries/pen/xOqdwj */
+    body {
+      font-family: sans-serif;
+    }
+
+    label {
+      position: relative;
+      display: block;
+      margin-bottom: 1em;
+      font-size: 1.6em;
+      line-height: 2em;
+    }
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+      /* clicky clicky */
+    }
+
+    input[type="radio"] + span {
+      display: block;
+      background-color: #4884ff;
+      color: white;
+      display: block;
+      text-align: center;
+      border: 2px solid transparent;
+      -webkit-transition: background-color 0.4s linear;
+      transition: background-color 0.4s linear;
+    }
+
+    input[type="radio"]:focus + span {
+      box-shadow: 0 0 8px #51cbee;
+      border-color: #51cbee;
+    }
+
+    input[type="radio"]:checked + span {
+      background-color: #CC3300;
+    }
+
+    footer {
+      margin-top: 1em;
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+    <form>
+    <fieldset>
+      <legend>What is the color&nbsp;blue?</legend>
+      <label>
+        <input type="radio" name="q1" value="blue" />
+        <span>Blue</span>
+      </label>
+      <label>
+        <input type="radio" name="q1" value="green" />
+        <span>Green</span>
+      </label>
+      <label>
+        <input type="radio" name="q1" value="red" />
+        <span>Red</span>
+      </label>
+    </fieldset>
+    </form>
+  </body>
+</html>
