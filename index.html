@@ -57,6 +57,7 @@
     </style>
   </head>
   <body>
+    <!-- note: it is best to test screen reader and keyboard accessibility outside of codepen -->
     <form>
     <fieldset>
       <legend>What is the color&nbsp;blue?</legend>
@@ -73,6 +74,23 @@
         <span>Red</span>
       </label>
     </fieldset>
+    <footer>
+        <button type="submit">Submit</button>
+        <pre></pre>
+    </footer>
     </form>
+    <script>
+      var form = document.querySelector('form');
+
+      form.addEventListener('submit',function(e){
+      e.preventDefault();
+      console.log(e);
+      try {
+        document.querySelector('pre').innerHTML = new FormData(e.target).getAll("q1");
+      } catch(e) {
+        console.log("Your brower doesn't support FormData.getAll()");
+      }
+      });
+    </script>
   </body>
 </html>
