@@ -30,6 +30,7 @@
       /* clicky clicky */
     }
 
+    /* the adjacent selector allows us to select the span who follows and is a sibling of our radio input(s) */
     input[type="radio"] + span {
       display: block;
       background-color: #4884ff;
@@ -41,11 +42,13 @@
       transition: background-color 0.4s linear;
     }
 
+    /* don't forget to style a focused state! */
     input[type="radio"]:focus + span {
       box-shadow: 0 0 8px #51cbee;
       border-color: #51cbee;
     }
 
+    /* when the input is checked style the span differently */
     input[type="radio"]:checked + span {
       background-color: #CC3300;
     }
@@ -90,7 +93,7 @@
       try {
         document.querySelector('pre').innerHTML = new FormData(e.target).getAll("q1");
       } catch(e) {
-        console.log("Your brower doesn't support FormData.getAll()");
+        document.querySelector('pre').innerHTML = "Your brower doesn't support FormData.getAll()";
       }
       });
     </script>
